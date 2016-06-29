@@ -4,17 +4,20 @@ A simple monthly leaderboard for posts on /r/uoft tagged as "Shitpost"
 
 ### Prerequisites
 
-- [Python 3](https://www.python.org/download/releases/3.0/)
+- [python 3](https://www.python.org/download/releases/3.0/)
 
 ### Dependencies
 
-The project uses [praw](https://praw.readthedocs.io/en/stable/)
-
-`$ pip3 install praw`
+```
+$ pip install virtualenv
+$ virtualenv -p /usr/local/bin/python3 venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+```
 
 ### Usage
 
-`$ python3 sp_board.py`
+`$ python sp_board.py`
 
 ### Example
 
