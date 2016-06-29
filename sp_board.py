@@ -22,8 +22,6 @@ for p in posts:
             else:
                 s_board[p.author.name] = S_Stat(p.author.name, 1, p.score,)
 
-s_board['hanmerchan'].posts_count += 2
-
 print ("S-Score Leaderboard:", datetime.now().strftime("%B, %Y"))
 for user_s_stat in sorted(s_board.values(),
                           key=lambda p_s_stat: p_s_stat.score, reverse=True):
