@@ -11,7 +11,7 @@ class S_Stat:
         s = Template(
             '--------------------------------- \n' +
             'Username: \t $user \n' +
-            'S-Posts Count: \t $posts_count \n' +
+            'SP-Post Count: \t $posts_count \n' +
             'Score: \t\t $score'
             )
         return s.substitute(user=self.user_name,

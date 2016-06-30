@@ -3,8 +3,6 @@ import sys
 from datetime import datetime
 from s_stat import S_Stat
 
-subreddit = 'uoft'
-
 r = praw.Reddit('SP-Score Leaderboard')
 
 r_uoft = r.get_subreddit('uoft')
@@ -22,7 +20,7 @@ for p in posts:
             else:
                 s_board[p.author.name] = S_Stat(p.author.name, 1, p.score,)
 
-print ("S-Score Leaderboard:", datetime.now().strftime("%B, %Y"))
+print ("SP-Score Leaderboard:", datetime.now().strftime("%B, %Y"))
 for user_s_stat in sorted(s_board.values(),
                           key=lambda p_s_stat: p_s_stat.score, reverse=True):
     print(user_s_stat)
