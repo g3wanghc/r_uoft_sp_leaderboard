@@ -13,12 +13,13 @@ s_board = dict()
 for p in posts:
     if p.link_flair_text is not None:
         if p.link_flair_text == 'Shitpost':
-            if p.author.name in s_board:
-                p_s_stat = s_board[p.author.name]
-                p_s_stat.posts_count += 1
-                p_s_stat.score += p.score
-            else:
-                s_board[p.author.name] = S_Stat(p.author.name, 1, p.score,)
+            if p.author:
+                if p.author.name in s_board:
+                    p_s_stat = s_board[p.author.name]
+                    p_s_stat.posts_count += 1
+                    p_s_stat.score += p.score
+                else:
+                    s_board[p.author.name] = S_Stat(p.author.name, 1, p.score,)
 
 print ("SP-Score Leaderboard:", datetime.now().strftime("%B, %Y"))
 for user_s_stat in sorted(s_board.values(),
